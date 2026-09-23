@@ -1,0 +1,66 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+  user-select: none;
+  cursor: default;
+  font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+}
+
+.toast {
+  box-sizing: border-box;
+  position: absolute;
+  inset: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 0 16px;
+  border-radius: 10px;
+  background: rgba(16, 18, 21, 0.94);
+  border: 1px solid #2b2f36;
+  border-left: 3px solid #53fc18;
+  color: #eceef1;
+  opacity: 0;
+  transform: translateX(12px);
+  transition:
+    opacity 140ms ease-out,
+    transform 140ms ease-out;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.toast[data-kind="warn"] {
+  border-left-color: #ffb020;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.icon {
+  font-size: 13px;
+}
+
+.detail {
+  font-family: "Cascadia Mono", "JetBrains Mono", Consolas, monospace;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  color: #b9bfc8;
+  padding-left: 21px;
+}
+
+.toast[data-kind="warn"] .detail {
+  font-family: inherit;
+  font-size: 12px;
+}

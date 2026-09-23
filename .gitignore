@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Frontend build output
+dist/
+*.tsbuildinfo
+
+# Rust / Tauri build output
+src-tauri/target/
+src-tauri/gen/
+
+# Bundled FFmpeg binaries are downloaded by `npm run fetch-ffmpeg`, not committed
+src-tauri/resources/ffmpeg/*
+!src-tauri/resources/ffmpeg/README.txt
+
+# Test media and exports produced during manual testing
+test-media/
+*.mkv
+*.mp4
+*.mov
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment / local config
+.env
+.env.*
+!.env.example
+
+# Editors & OS
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
